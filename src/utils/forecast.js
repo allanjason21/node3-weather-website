@@ -12,7 +12,13 @@ const forecast = (longitude, latitude, callback) => {
         Weather_Description: body.current.weather_descriptions[0],
         Current_Temp: body.current.temperature,
         feelslike: body.current.feelslike,
-        String_statement: `${body.current.weather_descriptions[0]}. It is ${body.current.temperature} degrees out. It feels like ${body.current.feelslike} degrees out`,
+        String_statement: `${body.current.weather_descriptions[0]}. It is ${
+          body.current.temperature
+        } degrees out. It feels like ${
+          body.current.feelslike
+        } degrees out. The humidity is ${
+          body.current.humidity
+        } and there is a ${body.current.precip * 100} percent chance of rain.`,
       });
     }
   });
